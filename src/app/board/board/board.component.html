@@ -7,8 +7,9 @@
 </div>
 
 
+
     
-    <div class="row gx-0" *ngFor="let row of board; let rowIndex = index">
+          <div class="row gx-0" *ngFor="let row of board; let rowIndex = index">
       <app-cell
         class="col"
         *ngFor="let cell of row; let colIndex = index"
@@ -17,5 +18,7 @@
         (flagPlaced)="markCell(rowIndex, colIndex)"
        
                                                      ></app-cell>
+                                                     
     </div>
+  
  

@@ -1,36 +1,48 @@
-.gamer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.board {
-  width: 300px; /* Defina a largura desejada para o tabuleiro */
-  height: 300px; /* Defina a altura igual à largura para torná-lo quadrado */
-  display: grid;
-  grid-template-columns: repeat(9, 1fr); /* Defina o número de colunas que você deseja */
-  grid-template-rows: repeat(9, 1fr); /* Defina o número de linhas que você deseja */
-  grid-gap: 0;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-}
-
-.col {
-  border: 1px solid #ddd;
-
-  justify-content: center;
-  align-items: center;
-  height: 30px; /* Defina a altura desejada para a célula */
-  width: 30px; /* Defina a largura desejada para a célula */
-  text-align: center;
-  line-height: 1; /* Removemos a altura da linha para que o texto não ocupe espaço extra */
-}
-
-/* Estilo opcional para o componente CellComponent */
+/* Estilo para o componente board */
 :host {
   display: block;
-  width: 100%; /* Define a largura do componente como 100% */
-  height: 100%; /* Define a altura do componente como 100% */
+  position: relative;
+  border: 1px solid #ccc; /* Borda da tabela */
+  background-color: #f1f1f1; /* Cor de fundo da tabela */
+  padding: 10px; /* Espaçamento interno da tabela */
+  width: fit-content; /* Ajusta a largura da tabela ao conteúdo */
+}
+
+/* Estilo para cada célula da tabela */
+.app-cell {
+  display: inline-block;
+  width: 30px; /* Largura da célula */
+  height: 30px; /* Altura da célula */
+  border: 1px solid #ccc; /* Borda da célula */
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+/* Estilo para célula não revelada */
+.app-cell:not(.revealed) {
+  background-color: #fff; /* Cor de fundo das células não reveladas */
+}
+
+/* Estilo para célula revelada */
+.app-cell.revealed {
+  background-color: #f1f1f1; /* Cor de fundo das células reveladas */
+}
+
+/* Estilo para o ícone de bandeira */
+.app-cell .bi-flag-fill {
+  font-size: 18px;
+  color: #ff0000; /* Cor do ícone de bandeira */
+}
+
+/* Estilo para o ícone de emoji triste */
+.app-cell .bi-emoji-frown-fill {
+  font-size: 20px;
+  color: #f7ad00; /* Cor do ícone de emoji triste */
+}
+
+/* Estilo para o número de minas adjacentes */
+.app-cell .adjacent-mines {
+  color: #000; /* Cor do número de minas adjacentes */
 }

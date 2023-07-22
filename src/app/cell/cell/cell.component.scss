@@ -1,9 +1,42 @@
-div {
-  &.border {
-    border-color: #ddd; // Sets the border color
-  }
-  
-  i {
-    font-size: 1.5rem; // Adjusts the size of the icons
-  }
+/* Estilo para o componente cell */
+:host {
+  display: block;
+}
+
+/* Estilo para cada célula da tabela */
+.cell-container {
+  width: 30px; /* Largura da célula */
+  height: 30px; /* Altura da célula */
+  border: 1px solid #ccc; /* Borda da célula */
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+/* Estilo para célula não revelada */
+.cell-container:not(.revealed) {
+  background-color: #fff; /* Cor de fundo das células não reveladas */
+}
+
+/* Estilo para célula revelada */
+.cell-container.revealed {
+  background-color: #f1f1f1; /* Cor de fundo das células reveladas */
+}
+
+/* Estilo para o ícone de bandeira */
+.cell-container .bi-flag-fill {
+  font-size: 18px;
+  color: #000; /* Cor do ícone de bandeira */
+}
+
+/* Estilo para o ícone de emoji triste */
+.cell-container .bi-emoji-frown-fill {
+  font-size: 20px;
+  color: #ff0000; /* Cor do ícone de emoji triste */
+}
+
+/* Estilo para o número de minas adjacentes */
+.cell-container .adjacent-mines {
+  color: #000; /* Cor do número de minas adjacentes */
 }
