@@ -1,16 +1,16 @@
-.container {
-    display: flex;
-    flex-direction: column;
+.gamer {
+    display: grid;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
     height: 100vh;
-    
-    .d-flex {
+    grid-template-rows: auto 1fr; 
+  
+    .controler {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      border-bottom: 2px solid #000; // Esta linha adicionará uma borda na parte inferior
+      grid-row: 1;
     }
   
     .game-status {
@@ -25,7 +25,7 @@
       grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
       justify-items: center;
       grid-gap: 0px;
-    //   margin-top: 20px; // Adicionei uma margem superior para separar a parte superior do tabuleiro do jogo
+      grid-row: 2;
   
       .row {
         .col {
