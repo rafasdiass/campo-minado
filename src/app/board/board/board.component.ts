@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
+import { CellComponent } from '../../cell/cell/cell.component';
 
 @Component({
   selector: 'app-board',
@@ -28,7 +29,10 @@ export class BoardComponent implements OnInit { // implemente OnInit para chamar
       return '😃';
     }
   }
-
+  get board() {
+    return this.gameService.board;
+  }
+  
   // crie métodos para interagir com o serviço
   revealCell(row: number, col: number) {
     this.gameService.revealCell(row, col);
