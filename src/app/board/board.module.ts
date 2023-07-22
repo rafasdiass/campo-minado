@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BoardRoutingModule } from './board-routing.module';
 import { BoardComponent } from './board/board.component';
 import { CellModule } from '../cell/cell.module';
+import { ControlModule } from '../control/control.module';
 
 
 @NgModule({
@@ -13,8 +14,11 @@ import { CellModule } from '../cell/cell.module';
   imports: [
     CommonModule,
     BoardRoutingModule,
-    CellModule
-  ]
+    CellModule,
+    ControlModule
+  ],
+  exports: [BoardComponent]
+
 })
 export class BoardModule { }
 

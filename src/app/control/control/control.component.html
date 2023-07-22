@@ -1,1 +1,14 @@
-<p>control works!</p>
+<div class="game-controls">
+    <button (click)="newGame()">New Game</button>
+    <div class="difficulty-settings">
+      <label>Select Difficulty: </label>
+      <select [(ngModel)]="selectedDifficulty" (change)="setDifficulty()">
+        <option value="" selected disabled>Select a difficulty</option>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+      
+    </div>
+  </div>
+  

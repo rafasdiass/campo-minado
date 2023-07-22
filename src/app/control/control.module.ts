@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ControlRoutingModule } from './control-routing.module';
 import { ControlComponent } from './control/control.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,10 @@ import { ControlComponent } from './control/control.component';
   ],
   imports: [
     CommonModule,
-    ControlRoutingModule
-  ]
+    ControlRoutingModule,
+    FormsModule
+  ],
+  exports: [ControlComponent]
+
 })
 export class ControlModule { }

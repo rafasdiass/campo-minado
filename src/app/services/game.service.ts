@@ -1,30 +1,24 @@
 import { Injectable } from '@angular/core';
-
-interface Cell {
-  isRevealed: boolean;
-  hasMine: boolean;
-  hasFlag: boolean;
-  adjacentMines: number;
-}
+import { Cell } from '../model/cell.model';
+import { DifficultyService } from './difficulty.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
-  
-  
   board: Cell[][] = [];
   gameOver: boolean = false;
   rows: number = 9;
   cols: number = 9;
   mineCount: number = 10;
 
-  constructor() { }
+  constructor(private difficultyService: DifficultyService) { }
 
-  newGame(rows: number = 9, cols: number = 9, mines: number = 10) {
-    this.rows = rows;
-    this.cols = cols;
-    this.mineCount = mines;
+  newGame() {
+    const difficulty = this.difficultyService.getDifficulty();
+    this.rows = difficulty.rows;
+    this.cols = difficulty.cols;
+    this.mineCount = difficulty.mines;
 
     this.board = Array(this.rows).fill(null).map(() => Array(this.cols).fill(null));
     this.gameOver = false;
@@ -37,13 +31,15 @@ export class GameService {
         row = Math.floor(Math.random() * this.rows);
         col = Math.floor(Math.random() * this.cols);
       }
-      this.board[row][col] = { isRevealed: false, hasMine: true, hasFlag: false, adjacentMines: 0 };
+      this.board[row][col] = { row: row, col: col, isRevealed: false, hasMine: true, hasFlag: false, adjacentMines: 0 };
+
     }
 
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col < this.cols; col++) {
         if(!this.board[row][col]) {
-          this.board[row][col] = { isRevealed: false, hasMine: false, hasFlag: false, adjacentMines: 0 };
+          this.board[row][col] = { row: row, col: col, isRevealed: false, hasMine: false, hasFlag: false, adjacentMines: 0 };
+
         }
         this.board[row][col].adjacentMines = this.countBombs(row, col);
       }

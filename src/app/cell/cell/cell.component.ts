@@ -8,7 +8,14 @@ import { Cell } from '../../model/cell.model';
 })
 export class CellComponent {
 
-  @Input() cell: Cell | undefined; // recebe a célula como entrada
+  @Input() cell: Cell = { 
+    isRevealed: false, 
+    hasMine: false, 
+    hasFlag: false, 
+    adjacentMines: 0,
+    row: 0,
+    col: 0 
+  };// recebe a célula como entrada
 
   @Output() cellClicked = new EventEmitter<{ row: number, col: number }>();
   @Output() flagPlaced = new EventEmitter<{ row: number, col: number }>();

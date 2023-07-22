@@ -1,4 +1,8 @@
 <div class="board">
+    <app-control></app-control> <!-- adicionando ControlComponent -->
+    <div class="game-status">
+      <h2>{{ getEmoji() }}</h2>
+    </div>
     <div *ngFor="let row of board; let rowIndex = index">
       <app-cell
         *ngFor="let cell of row; let colIndex = index"
