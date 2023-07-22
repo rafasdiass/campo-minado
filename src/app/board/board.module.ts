@@ -15,3 +15,4 @@ import { BoardComponent } from './board/board.component';
   ]
 })
 export class BoardModule { }
+
