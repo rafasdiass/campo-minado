@@ -1,21 +1,30 @@
-/* board.component.scss */
-.board {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    justify-items: center;
-    grid-gap: 0px;
-  }
-  
-  .game-status {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .difficulty-settings {
-    margin-top: 20px;
-  }
-  
-  .game-controls {
-    margin-top: 20px;
+/* app.component.scss */
+.container {
+    .game-status {
+      .bi {
+        font-size: 2rem;
+        color: #007bff;
+      }
+    }
+    
+    .board {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      justify-items: center;
+      grid-gap: 0px;
+      .row {
+        .col {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          border: 1px solid #000;
+          background-color: #eee;
+          .bi {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
   }
   
