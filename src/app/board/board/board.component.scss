@@ -1,17 +1,32 @@
-/* app.component.scss */
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    .d-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      border-bottom: 2px solid #000; // Esta linha adicionará uma borda na parte inferior
+    }
+  
     .game-status {
       .bi {
         font-size: 2rem;
         color: #007bff;
       }
     }
-    
+  
     .board {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
       justify-items: center;
       grid-gap: 0px;
+    //   margin-top: 20px; // Adicionei uma margem superior para separar a parte superior do tabuleiro do jogo
+  
       .row {
         .col {
           display: flex;
@@ -20,6 +35,7 @@
           height: 40px;
           border: 1px solid #000;
           background-color: #eee;
+  
           .bi {
             font-size: 1.5rem;
           }

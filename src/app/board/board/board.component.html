@@ -1,8 +1,10 @@
 <div class="container vh-100 d-flex flex-column align-items-center justify-content-center">
-    <app-control></app-control> <!-- ControlComponent -->
-    
-    <div class="game-status my-3">
-      <h2>{{ getEmoji() }}</h2>
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <app-control></app-control> <!-- ControlComponent -->
+      <div class="game-status my-3">
+        <h2>{{ getEmoji() }}</h2>
+      </div>
+      
     </div>
     
     <div class="board border rounded shadow p-2">
