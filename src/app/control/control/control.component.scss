@@ -1,28 +1,16 @@
-.container {
-    .form-group {
-      margin-bottom: 1rem;
-    }
-  
-    .mt-3 {
-      margin-top: 1rem;
-    }
-  
-    .board {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-      justify-content: center;
-      gap: 0px;
-      padding: 1rem;
-      width: fit-content;
-  
-      app-cell {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 40px;
-        width: 40px;
-        border: 1px solid #ccc;
-      }
-    }
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form-group {
+    margin-right: 1rem;
   }
-  
+
+  .btn {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 0.2rem 1rem; // Reduzir o padding vertical para diminuir a altura do botão
+    white-space: nowrap; // Evitar a quebra de linha do texto do botão
+  }
+}

@@ -1,29 +1,9 @@
 div {
-    height: 40px;
-    width: 40px;
-  
-    .bi {
-      font-size: 20px;
-    }
-  
-    &:not(.bg-light) {
-      background-color: #ddd;
-  
-      &:hover {
-        background-color: #ccc;
-      }
-    }
-  
-    &.bg-light {
-      background-color: #f8f9fa;
-  
-      &:hover {
-        background-color: #e9ecef;
-      }
-    }
-  
-    &.shadow-sm {
-      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-    }
+  &.border {
+    border-color: #ddd; // Sets the border color
   }
   
+  i {
+    font-size: 1.5rem; // Adjusts the size of the icons
+  }
+}

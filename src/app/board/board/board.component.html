@@ -1,21 +1,21 @@
-<div class="gamer">
-    <div class="controler">
-      <app-control></app-control> <!-- ControlComponent -->
-      <div class="game-status">
-        <h2>{{ getEmoji() }}</h2>
-      </div>
+ 
+      
+      
+<div class="game-status text-center">
+  <app-control></app-control>
+  <h2>{{ getEmoji() }}</h2>
+</div>
+
+
+    
+    <div class="row gx-0" *ngFor="let row of board; let rowIndex = index">
+      <app-cell
+        class="col"
+        *ngFor="let cell of row; let colIndex = index"
+        [cell]="cell"
+        (cellClicked)="revealCell(rowIndex, colIndex)"
+        (flagPlaced)="markCell(rowIndex, colIndex)"
+       
+                                                     ></app-cell>
     </div>
-  
-    <div class="board">
-      <div class="row gx-0" *ngFor="let row of board; let rowIndex = index">
-        <app-cell
-          class="col"
-          *ngFor="let cell of row; let colIndex = index"
-          [cell]="cell"
-          (cellClicked)="revealCell(rowIndex, colIndex)"
-          (flagPlaced)="markCell(rowIndex, colIndex)"
-        ></app-cell>
-      </div>
-    </div>
-  </div>
-  
+ 
