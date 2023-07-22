@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
-import { CellComponent } from '../../cell/cell/cell.component';
-import { ControlComponent } from '../../control/control/control.component'; // import ControlComponent
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-board',
@@ -10,10 +9,11 @@ import { ControlComponent } from '../../control/control/control.component'; // i
 })
 export class BoardComponent implements OnInit {
 
-  constructor(public gameService: GameService) { }
+  constructor(public gameService: GameService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.gameService.newGame();
+    this.cdr.detectChanges();
   }
 
   getEmoji() {

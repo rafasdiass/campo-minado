@@ -15,6 +15,7 @@ export class GameService {
   constructor(private difficultyService: DifficultyService) { }
 
   newGame() {
+    console.log('New game started');
     const difficulty = this.difficultyService.getDifficulty();
     this.rows = difficulty.rows;
     this.cols = difficulty.cols;
@@ -44,6 +45,7 @@ export class GameService {
         this.board[row][col].adjacentMines = this.countBombs(row, col);
       }
     }
+    console.log(this.board);  
   }
 
   gameWon(): boolean {

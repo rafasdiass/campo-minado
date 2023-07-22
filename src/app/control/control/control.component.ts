@@ -17,6 +17,7 @@ export class ControlComponent {
 
   newGame() {
     this.gameService.newGame();
+    console.log('New game started em control');
   }
   
 
@@ -25,7 +26,7 @@ export class ControlComponent {
       // Não faz nada se nenhuma dificuldade foi selecionada
       return;
     }
-    
+
     this.difficultyService.setDifficulty(this.selectedDifficulty);
     this.newGame();  // Start a new game with the new difficulty setting
   }

@@ -1,14 +1,22 @@
-<div class="game-controls">
-    <button (click)="newGame()">New Game</button>
-    <div class="difficulty-settings">
-      <label>Select Difficulty: </label>
-      <select [(ngModel)]="selectedDifficulty" (change)="setDifficulty()">
+<div class="container d-flex flex-column align-items-center justify-content-center vh-100">
+    <div class="form-group">
+      <label for="difficulty">Select Difficulty: </label>
+      <select [(ngModel)]="selectedDifficulty" (change)="setDifficulty()" class="form-control" id="difficulty">
         <option value="" selected disabled>Select a difficulty</option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
-      </select>
-      
+      </select>          
+    </div>
+    
+    <div class="mt-3">
+      <button (click)="newGame()" class="btn btn-primary">
+        <i class="bi bi-play-circle-fill"></i> New Game
+      </button>
+    </div>
+    
+    <div class="board mt-3 border rounded shadow bg-light">
+      <!-- Here goes the board logic -->
     </div>
   </div>
   

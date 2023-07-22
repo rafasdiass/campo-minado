@@ -1,5 +1,10 @@
-<div (click)="clickCell(cell.row, cell.col)" (contextmenu)="placeFlag($event, cell.row, cell.col)">
-    <div *ngIf="cell.isRevealed && !cell.hasMine">{{ cell.adjacentMines }}</div>
-    <div *ngIf="cell.isRevealed && cell.hasMine">💣</div>
-    <div *ngIf="!cell.isRevealed && cell.hasFlag">🚩</div>
-  </div>
+<div 
+  class="d-flex justify-content-center align-items-center border p-2 m-0"
+  (click)="clickCell(cell.row, cell.col)" 
+  (contextmenu)="placeFlag($event, cell.row, cell.col)"
+  [ngClass]="{'bg-light': !cell.isRevealed, 'shadow-sm': !cell.isRevealed}"
+>
+  <div *ngIf="cell.isRevealed && !cell.hasMine">{{ cell.adjacentMines }}</div>
+  <div *ngIf="cell.isRevealed && cell.hasMine"><i class="bi bi-emoji-frown-fill"></i></div>
+  <div *ngIf="!cell.isRevealed && cell.hasFlag"><i class="bi bi-flag-fill"></i></div>
+</div>
