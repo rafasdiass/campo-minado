@@ -32,7 +32,9 @@ export class BoardComponent implements OnInit {
   
   revealCell(row: number, col: number) {
     this.gameService.revealCell(row, col);
+    this.cdr.detectChanges();  // Força a detecção de mudanças
   }
+  
 
   markCell(row: number, col: number) {
     this.gameService.markCell(row, col);
