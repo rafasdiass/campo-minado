@@ -1,1 +1,5 @@
-<p>cell works!</p>
+<div (click)="clickCell(cell.row, cell.col)" (contextmenu)="placeFlag($event, cell.row, cell.col)">
+    <div *ngIf="cell.isRevealed && !cell.hasMine">{{ cell.adjacentMines }}</div>
+    <div *ngIf="cell.isRevealed && cell.hasMine">💣</div>
+    <div *ngIf="!cell.isRevealed && cell.hasFlag">🚩</div>
+  </div>

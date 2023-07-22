@@ -11,7 +11,8 @@ interface Cell {
   providedIn: 'root'
 })
 export class GameService {
-
+  
+  
   board: Cell[][] = [];
   gameOver: boolean = false;
   rows: number = 9;
@@ -48,6 +49,21 @@ export class GameService {
       }
     }
   }
+
+  gameWon(): boolean {
+  for(let row = 0; row < this.rows; row++) {
+    for(let col = 0; col < this.cols; col++) {
+      // if the cell doesn't have a mine and isn't revealed, return false
+      if(!this.board[row][col].hasMine && !this.board[row][col].isRevealed) {
+        return false;
+      }
+    }
+  }
+
+  
+  return true;
+}
+
 
   revealCell(row: number, col: number) {
     if (this.board[row][col].hasFlag || this.board[row][col].isRevealed) {
